@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = TdWidgets::VERSION
   s.authors     = ["Denesh Shan"]
   s.email       = ["denesh.shan@outlook.com"]
-  s.homepage    = "TODO: homepage"
+  s.homepage    = "https://github.com/deneshshan/td_widgets"
   s.summary     = "A collection of widgets for Team Dashboard."
-  s.description = "TODO: Description of TdWidgets."
+  s.description = "A collection of widgets for Team Dashboard."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
