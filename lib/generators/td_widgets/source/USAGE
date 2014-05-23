@@ -1,0 +1,8 @@
+Description:
+    Scaffolds a new source file for an existing source type. To Generate a new source type, using a widget generator. 
+
+Example:
+    Generate a new source for existing type. E.g. rails g td_widgets:source team_city --source_type=ci
+
+    This will create:
+       app/models/sources/ci/team_city.rb 
