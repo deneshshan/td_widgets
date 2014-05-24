@@ -1,0 +1,17 @@
+<div ng-controller="ChartCtrl">
+
+  <div td-field label="Name">
+    <input name="name" ng-model="widget.name" type="text" autofocus required />
+  </div>
+
+  <div td-field label="Type">
+    <select name="type" ng-model="widget.type" ng-options="i.value as i.label in types" required>
+    </select>
+  </div>
+
+  <div td-field label="Source">
+    <select name="source" ng-model="widget.source" ng-options="i.value as i.label in sources" required>
+    </select>
+  </div>
+
+</div>
