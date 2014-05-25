@@ -1,32 +1,24 @@
+require 'pry'
+
 module TdWidgets
   module Generators
     class SourceGenerator < Rails::Generators::NamedBase
+      include SourcesHelper
 
-      source_root File.expand_path('../templates', __FILE__)
-    
-      class_option :source_type, :type => :string, :required => :true, :desc => 'The source type to be used for this source. This is the widget folder name under models/sources to place this file in.'
+      source_root File.expand_path('../templates/source_type', __FILE__)
+      
+      class_option :inc_base, :aliases => '-b', :default => :true, :desc => 'Generates base class for source'
 
-      def create_sources_folder
-        unless validate_source_type
-          puts "\nInvalid source type!\nSource types available: " + Sources.available_source_types.to_s + "\n\n"
-          return
-        end
+      def create_base
+        invoke("td_widgets:shared_sources", ["--source-type=#{options.source_type}"]) if options.inc_base
+      end
+
+      def create_source
+        return unless validate_source_type 
+
+        puts 'Creating source....'
          
-        template get_template_path("source.rb"), get_source_folder_path("#{file_name}.rb") 
-      end
-
-      private
-
-      def get_template_path(file_name_with_ext = "")
-        "../templates/source_type/#{file_name_with_ext}"
-      end
-
-      def get_source_folder_path(file_name_with_ext = "")
-        Rails.root.join('app', 'models', 'sources', options.source_type, file_name_with_ext)
-      end
-
-      def validate_source_type
-        Sources.available_source_types.include?(options.source_type)
+        template "source.rb", get_source_folder_path("#{file_name}.rb") 
       end
     end
   end
