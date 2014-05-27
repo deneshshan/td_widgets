@@ -6,6 +6,12 @@ module TdWidgets
 
       source_root File.expand_path('../templates', __FILE__)
 
+      def copy_assets
+        puts "Copying assets..."
+        copy_file '../../../../../vendor/assets/javascripts/chart/angular-charts.min.js', get_vendor_assets_js_path + 'angular-charts.min.js'
+        copy_file '../../../../../vendor/assets/javascripts/chart/d3.min.js', get_vendor_assets_js_path + 'd3.min.js' 
+      end
+
       def create_widget_assets
         puts "Creating widget assets..."
         directory self.get_assets_location + "widgets/chart/", self.get_assets_path + "widgets/chart/"

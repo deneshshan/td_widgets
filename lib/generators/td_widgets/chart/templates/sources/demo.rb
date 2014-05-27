@@ -6,7 +6,19 @@ module Sources
       end
 
       def get(options = {})
-        { :value => rand(2) == 1 }
+        { 
+          :series => ["Sales", "Income", "Expense"],
+          :data => [
+            { 
+              :x => "Computers",
+              :y => [ 54, 0, 879 ]
+            },
+            {
+              :x => "ajbfwekjfbeq",
+              :y => [ 86, 12, 20 ]
+          ],
+          :tooltip => "This is a tooltip"
+        }
       end
     end
   end

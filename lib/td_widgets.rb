@@ -17,6 +17,10 @@ module TdWidgets
     def get_sources_path
       Rails.root.join('app', 'models', 'sources')
     end
+
+    def get_vendor_assets_js_path
+      Rails.root.join('vendor', 'assets', 'javascripts')
+    end
   end
 
   module SourcesHelper

@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+source "https://rails-assets.org"
 
 # Declare your gem's dependencies in td_widgets.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -14,3 +15,5 @@ gemspec
 # gem 'debugger'
 #
 
+#gem "rails-assets-angular"
+#gem "rails-assets-d3"

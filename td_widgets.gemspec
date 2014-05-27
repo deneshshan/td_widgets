@@ -13,10 +13,11 @@ Gem::Specification.new do |s|
   s.summary     = "A collection of widgets for Team Dashboard."
   s.description = "A collection of widgets for Team Dashboard."
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.0.0"
+  s.add_dependency "railties"
 
   s.add_development_dependency "sqlite3"
 end
