@@ -1,25 +1,33 @@
 module Sources 
   module Chart
     class Demo < Sources::Chart::Base
-      def available?
-        true
-      end
 
       def get(options = {})
         { 
-          :series => ["Sales", "Income", "Expense"],
+          :series => ["Issues"],
           :data => [
             { 
-              :x => "Computers",
-              :y => [ 54, 0, 879 ]
+              :x => "New",
+              :y => [ random, random, random ]
             },
             {
-              :x => "ajbfwekjfbeq",
-              :y => [ 86, 12, 20 ]
-          ],
-          :tooltip => "This is a tooltip"
+              :x => "Open",
+              :y => [ random, random, random ]
+            },
+            {
+              :x => "Closed",
+              :y => [ random ]
+            }
+          ]
         }
       end
+
+      private
+
+      def random
+        rand(0..1000)
+      end
+
     end
   end
 end
