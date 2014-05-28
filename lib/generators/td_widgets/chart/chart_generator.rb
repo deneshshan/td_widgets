@@ -38,7 +38,7 @@ module TdWidgets
       def clean_up_assets
         if options.add_assets
           puts "Cleaning up application.js..."
-          clean_up_file "app/assets/javascripts/application.js", /^\/\/= require angular-charts.min\[\n\]$/
+          clean_up_file "app/assets/javascripts/application.js", /^\/\/= require angular-charts.min$/
           clean_up_file "app/assets/javascripts/application.js", /^\/\/= require d3.min$/
           clean_up_file "app/assets/javascripts/app.js", /, \"angularCharts\"/
         end
