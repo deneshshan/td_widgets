@@ -42,4 +42,10 @@ module TdWidgets
       valid
     end
   end
+
+  module FileHelper
+    def clean_up_file(path, regex)
+      gsub_file path, regex, ""
+    end
+  end
 end
