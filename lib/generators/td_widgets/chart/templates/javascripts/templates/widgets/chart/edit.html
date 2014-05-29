@@ -4,9 +4,17 @@
     <input name="name" ng-model="widget.name" type="text" autofocus required />
   </div>
 
+  <div td-field label="Chart Type">
+    <select name="chart_type" ng-model="widget.chart_type", ng-options="i.value as i.label for i in chartTypes" required></select>
+  </div>
+
   <div td-field label="Source">
     <select name="source" ng-model="widget.source" ng-options="i.value as i.label for i in sources" required>
     </select>
+  </div>
+
+  <div td-field label="Update Intervals">
+    <select name="update_interval" ng-model="widget.update_interval", ng-options="i.value as i.label for i in updateIntervals" required></select>
   </div>
 
 </div>

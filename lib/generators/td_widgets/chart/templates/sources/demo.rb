@@ -16,7 +16,7 @@ module Sources
             },
             {
               :x => "Closed",
-              :y => [ random ]
+              :y => [ random, random, random ]
             }
           ]
         }

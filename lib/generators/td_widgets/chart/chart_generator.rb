@@ -1,4 +1,3 @@
-require 'pry'
 module TdWidgets
   module Generators
     class ChartGenerator < Rails::Generators::Base
@@ -73,6 +72,10 @@ module TdWidgets
           puts "Run with flag -a true, to do this through the generator"
           print_borders
         end
+      end
+
+      def create_editor_form_options
+        Rails::Generators.invoke 'td_widgets:services', ["--service=form_options"]
       end
 
       private
